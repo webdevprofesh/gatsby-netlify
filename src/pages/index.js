@@ -5,18 +5,6 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-import contactInfo from '../../site/settings/contact_info.json';
-
-// "phone": "123457890",
-// "email": "fjkdsl@fjdkls.com",
-// "address": {
-//   "street": "fdsfds",
-//   "street2": "fdjks"
-// },
-// "images": [
-//   "/img/favicon-32x32.png",
-//   "/img/favicon-32x32.png"
-// ]
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -25,9 +13,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      {contactInfo.phone}      
-      {contactInfo.email}      
-      {contactInfo.images.map(img => <img src={img} alt="image" />)}
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
